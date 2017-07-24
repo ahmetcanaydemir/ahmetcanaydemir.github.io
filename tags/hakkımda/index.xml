@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hakkımda on Ahmet Can Aydemir</title>
-    <link>https://example.com/tags/hakk%C4%B1mda/</link>
+    <link>https://ahmetcanaydemir.github.io/tags/hakk%C4%B1mda/</link>
     <description>Recent content in Hakkımda on Ahmet Can Aydemir</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>tr-TR</language>
     <lastBuildDate>Mon, 24 Jul 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://example.com/tags/hakk%C4%B1mda/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ahmetcanaydemir.github.io/tags/hakk%C4%B1mda/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Özgeçmiş</title>
-      <link>https://example.com/ozgecmis/</link>
+      <link>https://ahmetcanaydemir.github.io/ozgecmis/</link>
       <pubDate>Mon, 24 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/ozgecmis/</guid>
+      <guid>https://ahmetcanaydemir.github.io/ozgecmis/</guid>
       <description>TODO: yazılacak</description>
     </item>
     
