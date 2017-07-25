@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blogs on Ahmet Can Aydemir</title>
-    <link>https://ahmetcanaydemir.github.io/blog/</link>
+    <link>http://www.ahmetcanaydemir.com/blog/</link>
     <description>Recent content in Blogs on Ahmet Can Aydemir</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>tr-TR</language>
     <lastBuildDate>Mon, 24 Jul 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://ahmetcanaydemir.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.ahmetcanaydemir.com/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>C# Console Renk değiştirme, CursorVisible, Program başlığı Düzenleme</title>
-      <link>https://ahmetcanaydemir.github.io/blog/cconsole-renk-baslik-degistirme-yanip-sonme-kaldirma/</link>
+      <link>http://www.ahmetcanaydemir.com/blog/cconsole-renk-baslik-degistirme-yanip-sonme-kaldirma/</link>
       <pubDate>Mon, 24 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://ahmetcanaydemir.github.io/blog/cconsole-renk-baslik-degistirme-yanip-sonme-kaldirma/</guid>
+      <guid>http://www.ahmetcanaydemir.com/blog/cconsole-renk-baslik-degistirme-yanip-sonme-kaldirma/</guid>
       <description>Özet Bu yazımda programınızın temelini oluşturmayan fakat görselleştirme ve göze hoş görünme konusunda işinize yarayacak bazı basit C# komutlarını göstereceğim.
 Yazı Rengi Değiştirmek: Bu komut yazımızın rengini değiştirmeye olanak sağlar. ConsoleColor. yazdığınızda otomatik tamamlama sayesinde kullanabileceğiniz renkleri görebilir ve oradaki renklerden birini kullanabilirsiniz. Bir kere yazdığınızda tüm program boyunca aynı rengi kullanacağı için kullandığınız satırdan sonra Console.ResetColor(); yazmayı unutmayın..
 Console.ForegroundColor = ConsoleColor.Yellow; Console.WriteLine(&amp;quot;Ahmet Can Aydemir&amp;quot;); Console.ReadKey();  Yazı Arkaplanını Değiştirmek: Bu komut sayesinde herhangi yazıyı vurgulayabilirsiniz.</description>

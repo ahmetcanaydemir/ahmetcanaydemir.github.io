@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ahmet Can Aydemir</title>
-    <link>https://ahmetcanaydemir.github.io/</link>
+    <link>http://www.ahmetcanaydemir.com/</link>
     <description>Recent content on Ahmet Can Aydemir</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>tr-TR</language>
     <lastBuildDate>Mon, 24 Jul 2017 22:55:05 -0400</lastBuildDate>
     
-	<atom:link href="https://ahmetcanaydemir.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.ahmetcanaydemir.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Projeler</title>
-      <link>https://ahmetcanaydemir.github.io/projeler/</link>
+      <link>http://www.ahmetcanaydemir.com/projeler/</link>
       <pubDate>Mon, 24 Jul 2017 22:55:05 -0400</pubDate>
       
-      <guid>https://ahmetcanaydemir.github.io/projeler/</guid>
+      <guid>http://www.ahmetcanaydemir.com/projeler/</guid>
       <description></description>
     </item>
     
     <item>
       <title>C# Console Renk değiştirme, CursorVisible, Program başlığı Düzenleme</title>
-      <link>https://ahmetcanaydemir.github.io/blog/cconsole-renk-baslik-degistirme-yanip-sonme-kaldirma/</link>
+      <link>http://www.ahmetcanaydemir.com/blog/cconsole-renk-baslik-degistirme-yanip-sonme-kaldirma/</link>
       <pubDate>Mon, 24 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://ahmetcanaydemir.github.io/blog/cconsole-renk-baslik-degistirme-yanip-sonme-kaldirma/</guid>
+      <guid>http://www.ahmetcanaydemir.com/blog/cconsole-renk-baslik-degistirme-yanip-sonme-kaldirma/</guid>
       <description>Özet Bu yazımda programınızın temelini oluşturmayan fakat görselleştirme ve göze hoş görünme konusunda işinize yarayacak bazı basit C# komutlarını göstereceğim.
 Yazı Rengi Değiştirmek: Bu komut yazımızın rengini değiştirmeye olanak sağlar. ConsoleColor. yazdığınızda otomatik tamamlama sayesinde kullanabileceğiniz renkleri görebilir ve oradaki renklerden birini kullanabilirsiniz. Bir kere yazdığınızda tüm program boyunca aynı rengi kullanacağı için kullandığınız satırdan sonra Console.ResetColor(); yazmayı unutmayın..
 Console.ForegroundColor = ConsoleColor.Yellow; Console.WriteLine(&amp;quot;Ahmet Can Aydemir&amp;quot;); Console.ReadKey();  Yazı Arkaplanını Değiştirmek: Bu komut sayesinde herhangi yazıyı vurgulayabilirsiniz.</description>
@@ -33,10 +33,10 @@ Console.ForegroundColor = ConsoleColor.Yellow; Console.WriteLine(&amp;quot;Ahmet
     
     <item>
       <title>Özgeçmiş</title>
-      <link>https://ahmetcanaydemir.github.io/ozgecmis/</link>
+      <link>http://www.ahmetcanaydemir.com/ozgecmis/</link>
       <pubDate>Mon, 24 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://ahmetcanaydemir.github.io/ozgecmis/</guid>
+      <guid>http://www.ahmetcanaydemir.com/ozgecmis/</guid>
       <description>Hey! My name is Ahmet Can Aydemir. I am 20 and student of Selçuk University at 2th grade. My department is computer science.
 *(Tusunami is my nickname. Yes it has &amp;ldquo;u&amp;rdquo; character)*
 Now I am developing in kodvizit.com
