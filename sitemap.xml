@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://www.ahmetcanaydemir.com/blog/universite-mail-hesabi-ile-ucretsiz-intellij-idea/</loc>
+    <lastmod>2017-11-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.ahmetcanaydemir.com/projeler/</loc>
     <lastmod>2017-07-24T22:55:05-04:00</lastmod>
   </url>
@@ -19,13 +24,13 @@
   
   <url>
     <loc>http://www.ahmetcanaydemir.com/</loc>
-    <lastmod>2017-07-24T22:55:05-04:00</lastmod>
+    <lastmod>2017-11-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.ahmetcanaydemir.com/blog/</loc>
-    <lastmod>2017-07-24T00:00:00+00:00</lastmod>
+    <lastmod>2017-11-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -53,13 +58,13 @@
   </url>
   
   <url>
-    <loc>http://www.ahmetcanaydemir.com/tags/projeler/</loc>
+    <loc>http://www.ahmetcanaydemir.com/categories/projeler/</loc>
     <lastmod>2017-07-24T22:55:05-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.ahmetcanaydemir.com/categories/projeler/</loc>
+    <loc>http://www.ahmetcanaydemir.com/tags/projeler/</loc>
     <lastmod>2017-07-24T22:55:05-04:00</lastmod>
     <priority>0</priority>
   </url>

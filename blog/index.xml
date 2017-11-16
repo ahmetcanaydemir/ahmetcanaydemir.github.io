@@ -6,10 +6,19 @@
     <description>Recent content in Blogs on Ahmet Can Aydemir</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>tr-TR</language>
-    <lastBuildDate>Mon, 24 Jul 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 16 Nov 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://www.ahmetcanaydemir.com/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Üniversite Maili ile Ücretsiz IntelliJ IDEA Nasıl Alınır</title>
+      <link>http://www.ahmetcanaydemir.com/blog/universite-mail-hesabi-ile-ucretsiz-intellij-idea/</link>
+      <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ahmetcanaydemir.com/blog/universite-mail-hesabi-ile-ucretsiz-intellij-idea/</guid>
+      <description>Özet Güçlü bir IDE olan IntelliJ IDEA ve JetBrains markasının tüm diğer ürünlerini üniversite öğrencisi olarak sadece mail adresiniz ile alabilirsiniz. JetBrains Java ve Javascript(React, Angular, Node.js, Cordova vs. dahil) yanında PHP, Python, C, C++ Ruby, GoLang gibi diller için de ayrı IDE sunuyor. Ayrıca Visual Studio eklentisi olarak çalışan -benim de çok sevdiğim- ReSharper kodlarınızı ve isimlendirmelerinizi kontrol edip standart hale getirmenize yardım ediyor. Böylece birlikte proje geliştirdiğiniz kişiler de sizin kodlarınızı rahatlıkla anlayabilir.</description>
+    </item>
     
     <item>
       <title>C# Console Renk değiştirme, CursorVisible, Program başlığı Düzenleme</title>
