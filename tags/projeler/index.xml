@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projeler on Ahmet Can Aydemir</title>
-    <link>http://www.ahmetcanaydemir.com/tags/projeler/</link>
+    <link>//www.ahmetcanaydemir.com/tags/projeler/</link>
     <description>Recent content in Projeler on Ahmet Can Aydemir</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>tr-TR</language>
     <lastBuildDate>Mon, 24 Jul 2017 22:55:05 -0400</lastBuildDate>
     
-	<atom:link href="http://www.ahmetcanaydemir.com/tags/projeler/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="//www.ahmetcanaydemir.com/tags/projeler/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Projeler</title>
-      <link>http://www.ahmetcanaydemir.com/projeler/</link>
+      <link>//www.ahmetcanaydemir.com/projeler/</link>
       <pubDate>Mon, 24 Jul 2017 22:55:05 -0400</pubDate>
       
-      <guid>http://www.ahmetcanaydemir.com/projeler/</guid>
+      <guid>//www.ahmetcanaydemir.com/projeler/</guid>
       <description></description>
     </item>
     
