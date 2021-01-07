@@ -1,7 +1,7 @@
 ---
 title: I Renewed My Personal Website
-date: '2020-01-07'
-spoiler: I moved my personal website from Hugo to Gatsby!
+date: '2021-01-07'
+spoiler: New things in the new year, so I started by renewing my website.
 ---
 
 [](/x/)

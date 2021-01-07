@@ -1,7 +1,7 @@
 ---
 title: Kişisel Web Sitemi Yeniledim
-date: '2020-01-07'
-spoiler: New things in the new year, so I started by renwing my website.
+date: '2021-01-07'
+spoiler: Yeni yılda yeni şeyler yapmak gerek, ben de websitemi yenileyerek başlaedım.
 ---
 
 [](/x/)

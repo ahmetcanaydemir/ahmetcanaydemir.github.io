@@ -134,7 +134,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-ebook`,
       options: {
-        filename: 'overreacted-ebook.epub',
+        filename: 'ahmetcanaydemir-ebook.epub',
         query: `
           {
             site {
