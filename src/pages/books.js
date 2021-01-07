@@ -43,7 +43,7 @@ class BooksIndex extends React.Component {
     };
     const ratingToStar = rating => {
       if (Number(rating)) {
-        return ` • ${new Array(Number(rating) || 0).fill('⭑').join('')}`;
+        return ` • ${new Array(Number(rating) || 0).fill('★').join('')}`;
       }
       return '';
     };
