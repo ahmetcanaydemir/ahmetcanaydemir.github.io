@@ -10,14 +10,16 @@ import SEO from '../components/SEO';
 import get from 'lodash/get';
 import { rhythm, scale } from '../utils/typography';
 
-class BooksIndex extends React.Component {
+class WatchedIndex extends React.Component {
   render() {
     const langKey = this.props.pageContext.langKey;
 
-    const books = get(this, 'props.data.allBooksCsv.nodes');
-    const getBooks = shelf => {
-      return books
-        .filter(node => node.Exclusive_Shelf === shelf)
+    const watched = get(this, 'props.data.allWatchedCsv.nodes');
+    const movieCount = watched.filter(node => node.Title_Type === 'movie')
+      .length;
+    const getMovies = type => {
+      return watched
+        .filter(node => node.Title_Type === type)
         .map(node => {
           const title = `${node.Title}`;
           return (
@@ -29,12 +31,18 @@ class BooksIndex extends React.Component {
                     marginBottom: rhythm(1 / 14),
                   }}
                 >
-                  {title}
+                  <a
+                    href={`https://www.imdb.com/title/${node.Const}/`}
+                    target="_blank"
+                    rel="noopener no referrer"
+                  >
+                    {title}
+                  </a>
                 </h4>
                 <small>
-                  {`${node.Author_l_f} • ${node.Publisher} • ${
-                    node.Number_of_Pages
-                  } pages${ratingToStar(node.My_Rating)}`}
+                  {`${node.Year} • ${node.Runtime} minutes${ratingToStar(
+                    node.Your_Rating
+                  )}`}
                 </small>
               </header>
             </article>
@@ -48,7 +56,7 @@ class BooksIndex extends React.Component {
       return '';
     };
     return (
-      <Layout location={this.props.location} title="Books">
+      <Layout location={this.props.location} title="Watched">
         <SEO />
         <main>
           <h1
@@ -58,18 +66,18 @@ class BooksIndex extends React.Component {
               border: 0,
             }}
           >
-            Books
+            Watched
           </h1>
-          Books I rated on Goodreads.
-          <h3 style={{ marginBottom: rhythm(0.2) }}>Reading</h3>
+          Movies and tv series I rated on IMDB.
+          <h3 style={{ marginBottom: rhythm(0.2) }}>Movies ({movieCount})</h3>
           <hr />
-          {getBooks('currently-reading')}
-          <h3 style={{ marginBottom: rhythm(0.2) }}>Readed</h3>
+          {getMovies('movie')}
+          <h3 style={{ marginBottom: rhythm(0.2) }}>
+            Series ({watched.length - movieCount})
+          </h3>
           <hr />
-          {getBooks('read')}
-          <h3 style={{ marginBottom: rhythm(0.2) }}>To-Read</h3>
-          <hr />
-          {getBooks('to-read')}
+          {getMovies('tvSeries')}
+          {getMovies('tvMiniSeries')}
         </main>
 
         <aside style={{ marginTop: rhythm(3) }}>
@@ -80,18 +88,18 @@ class BooksIndex extends React.Component {
   }
 }
 
-export default BooksIndex;
+export default WatchedIndex;
 
 export const pageQuery = graphql`
   query {
-    allBooksCsv(sort: { fields: Date_Added, order: DESC }) {
+    allWatchedCsv(sort: { fields: Date_Rated, order: DESC }) {
       nodes {
-        Publisher
-        Author_l_f
+        Const
+        Runtime
         Title
-        My_Rating
-        Number_of_Pages
-        Exclusive_Shelf
+        Title_Type
+        Year
+        Your_Rating
       }
     }
   }

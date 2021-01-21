@@ -59,6 +59,9 @@ class Layout extends React.Component {
             <Link to="/books" className={`${title === 'Books' && 'selected'}`}>
               Books
             </Link>
+            <Link to="/watched" className={`${title === 'Wathed' && 'selected'}`}>
+              Wathed
+            </Link>
           </div>
         </div>
       </h1>
