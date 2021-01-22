@@ -299,3 +299,13 @@ pre[data-line] {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+/* Safe area for hover */
+.dropdown:hover::after {
+  content: '';
+  position: absolute;
+  top: calc(100% - 30px);
+  left: 0;
+  width: 230px;
+  height: 30px;
+}
