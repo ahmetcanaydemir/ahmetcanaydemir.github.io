@@ -29,11 +29,13 @@ class BlogIndexTemplate extends React.Component {
             return (
               <article key={node.fields.slug}>
                 <header>
-                  <h3
+                  <h1
                     style={{
                       fontFamily: 'Montserrat, sans-serif',
                       fontSize: rhythm(1),
                       marginBottom: rhythm(1 / 4),
+                      paddingBottom:0,
+                      border:'none'
                     }}
                   >
                     <Link
@@ -43,7 +45,7 @@ class BlogIndexTemplate extends React.Component {
                     >
                       {title}
                     </Link>
-                  </h3>
+                  </h1>
                   <small>
                     {formatPostDate(node.frontmatter.date, langKey)}
                     {` • ${formatReadingTime(node.timeToRead)}`}

@@ -39,14 +39,15 @@ class Layout extends React.Component {
             color: 'var(--textTitle)',
             marginRight: 5,
           }}
+          aria-label="Home"
           to={'/'}
         >
           <HomeIcon />
         </Link>
-        <div class="dropdown">
+        <div className="dropdown">
           <DownIcon />
 
-          <div class="dropdown-content">
+          <div className="dropdown-content">
             <Link to="/about" className={`${title === 'About' && 'selected'}`}>
               About
             </Link>

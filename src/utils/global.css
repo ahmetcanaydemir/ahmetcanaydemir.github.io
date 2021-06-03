@@ -1,15 +1,15 @@
 body {
-  --green: #27a822;
+  --green: #28ab1c;
   background-color: var(--bg);
 }
 
 body.light {
   --bg: #ffffff;
   --bg-secondary: rgb(249, 250, 251);
-  --header: var(--green);
+  --header: #1f871b;
   --textNormal: #222;
   --textTitle: #222;
-  --textLink: #27a822;
+  --textLink: #1f871b;
   --hr: hsla(0, 0%, 0%, 0.2);
   --inlineCode-bg: rgba(255, 229, 100, 0.2);
   --inlineCode-text: #1a1a1a;
