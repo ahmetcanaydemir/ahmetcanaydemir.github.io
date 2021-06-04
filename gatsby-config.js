@@ -169,9 +169,12 @@ module.exports = {
         short_name: `Ahmet Can Aydemir`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#27a822`,
+        theme_color: `#1f871b`,
         display: `minimal-ui`,
         icon: `src/assets/icon.png`,
+        icon_options: {
+          purpose: `any maskable`,
+        },
         theme_color_in_head: false,
       },
     },
@@ -198,5 +201,6 @@ module.exports = {
       },
     },
     `gatsby-transformer-csv`,
+    `gatsby-plugin-offline`
   ],
 };
