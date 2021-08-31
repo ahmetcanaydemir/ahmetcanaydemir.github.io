@@ -84,11 +84,11 @@ class About extends React.Component {
               </a>
               . Also you can follow me on twitter{' '}
               <a
-                href="https://www.twitter.com/ahmetcanaydemir"
+                href="https://www.twitter.com/ahmetcnaydemir"
                 target="_blank"
                 rel="noopener nofollow"
               >
-                @ahmetcanaydemir
+                @ahmetcnaydemir
               </a>
             </p>
             <p>
