@@ -31,22 +31,13 @@ class About extends React.Component {
             <p>Hi there,</p>
             <p>
               My name is <strong>Ahmet Can Aydemir</strong> and I'm a Software
-              Developer at{' '}
+              Engineer at{' '}
               <a
-                href="https://www.piworks.net/"
+                href="https://www.hepsiburada.com/"
                 target="_blank"
                 rel="noopener nofollow"
               >
-                P.I. Works
-              </a>
-              . I'm also currently pursuing my bachelor's senior degree majoring
-              in computer science from{' '}
-              <a
-                href="https://www.ktun.edu.tr/"
-                target="_blank"
-                rel="noopener nofollow"
-              >
-                Konya Techinal University
+                Hepsiburada
               </a>
               .
             </p>
