@@ -1,7 +1,7 @@
 ---
-title: Kişisel Web Sitemi Yeniledim
+title: 'Kişisel Web Sitemi Yeniledim'
 date: '2021-01-07'
-spoiler: Yeni yılda yeni şeyler yapmak gerek, ben de websitemi yenileyerek başlaedım.
+spoiler: 'Yeni yılda yeni şeyler yapmak gerek, ben de websitemi yenileyerek başlaedım.'
 ---
 
 [](/x/)

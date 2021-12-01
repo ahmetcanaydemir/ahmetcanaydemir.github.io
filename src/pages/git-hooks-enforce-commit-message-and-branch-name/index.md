@@ -1,7 +1,7 @@
 ---
-title: Git Hooks: Enforce Commit Message and Branch Name
+title: 'Git Hooks: Enforce Commit Message and Branch Name'
 date: '2021-12-01'
-spoiler: Branch and commit rules with git hooks
+spoiler: 'Branch and commit rules with git hooks'
 ---
 
 [](/x/)

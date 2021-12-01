@@ -1,7 +1,7 @@
 ---
-title: Git Hooks: Branch Adı ve Commit Mesajına Kural Ekleme
-date: '2021-01-07'
-spoiler: Git hooklarıyla branch ve commit için kurallar koyun
+title: 'Git Hooks: Branch Adı ve Commit Mesajına Kural Ekleme'
+date: '2021-12-01'
+spoiler: 'Git hooklarıyla branch ve commit için kurallar koyun'
 ---
 
 [](/x/)

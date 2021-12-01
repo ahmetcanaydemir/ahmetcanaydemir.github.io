@@ -1,7 +1,7 @@
 ---
-title: I Renewed My Personal Website
+title: 'I Renewed My Personal Website'
 date: '2021-01-07'
-spoiler: New things in the new year, so I started by renewing my website.
+spoiler: 'New things in the new year, so I started by renewing my website.'
 ---
 
 [](/x/)
