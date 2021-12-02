@@ -7,7 +7,7 @@ spoiler: 'Update MR title and description with Jira Issue Id'
 [](/x/)
 
 
-In my previous article, we enforced branch names and commit messages to certain rules. Now I will go a step further. When a MR is opened, if there is Jira issue id (eg. ISSUE-0000) in the title, we will pull the Jira title and description and update MR. CI will fail if there is no Jira Issue Id in the title.
+In [my previous article](/git-hooks-enforce-commit-message-and-branch-name/), we enforced branch names and commit messages to certain rules. Now I will go a step further. When a MR is opened, if there is Jira issue id (eg. ISSUE-0000) in the title, we will pull the Jira title and description and update MR. CI will fail if there is no Jira Issue Id in the title.
 
 ---
 

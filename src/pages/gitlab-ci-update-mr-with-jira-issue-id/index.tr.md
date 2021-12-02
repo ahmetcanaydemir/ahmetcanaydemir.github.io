@@ -7,7 +7,7 @@ spoiler: 'Jira Issue Id ile MR başlığını ve açıklamasını güncelleyin'
 [](/x/)
 
 
-Bir önceki yazımda branch isimlerini ve commit mesajlarını belirli kurallara bağlamıştık. Şimdi bir adım daha ileri gideceğim. MR açıldığında başlığında Jira issue id (örn. ISSUE-0000) varsa, başlığa jira'daki başlığını ve açıklamaya jiradaki açıklamayı çekeceğiz. Eğer başlıkta Jira Issue Id hiç yoksa CI fail olacak.
+Bir [önceki yazımda](/tr/git-hooks-enforce-commit-message-and-branch-name/) branch isimlerini ve commit mesajlarını belirli kurallara bağlamıştık. Şimdi bir adım daha ileri gideceğim. MR açıldığında başlığında Jira issue id (örn. ISSUE-0000) varsa, başlığa jira'daki başlığını ve açıklamaya jiradaki açıklamayı çekeceğiz. Eğer başlıkta Jira Issue Id hiç yoksa CI fail olacak.
 
 ---
 
