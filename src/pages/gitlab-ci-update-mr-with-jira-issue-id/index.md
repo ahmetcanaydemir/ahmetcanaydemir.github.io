@@ -78,8 +78,7 @@ curl -v \
 
 ## Result
 
-Tüm bunları bir GitLab CI yml dosyasında birleştirdiğimizde şöyle görünecekir.
-
+When we combine all this into one GitLab CI yml file it will look like this.
 
 ```yml
 check_mr:
