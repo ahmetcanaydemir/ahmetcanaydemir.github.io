@@ -23,7 +23,7 @@ Elasticsearch snapshotlarını Minio'da nasıl saklayabileceğimizi açıklayaca
 
 Minio UI console'u açıp sol menüden **Buckets**'a girip **Create Bucket** ile bir bucket oluşturabilirsiniz.
 
-![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/iippohmwlinkwrcxern2.png)
+![Bucket](./assets/bucket.png)
 
 ---
 
@@ -35,7 +35,7 @@ Minio UI console'u açıp sol menüden **Service Accounts**'a girip **Create Ser
 
 Bu aşamada göreceğiniz **Secret Key** ve **Access Key**i kaydedin bu bilgileri plugin kurulumu sırasında kullanacağız.
 
-![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8ejh1gjw6wu1nw53ds1s.png)
+![Service Account](./assets/service-account.png)
 
 ---
 

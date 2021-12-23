@@ -23,7 +23,7 @@ First we need a bucket to store elasticsearch snapshots.
 
 You can create a bucket at Minio UI Console. Click **Buckets** from the left menu and click **Create Bucket**.
 
-![Creating Bucket](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/iippohmwlinkwrcxern2.png)
+![Creating Bucket](./assets/bucket.png)
 
 ---
 
@@ -35,7 +35,7 @@ You can create a service account at Minio UI Console. Click **Service Accounts**
 
 Save the **Secret Key** and **Access Key**, we will use this information during the plugin installation.
 
-![Creating Service Account](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8ejh1gjw6wu1nw53ds1s.png)
+![Creating Service Account](./assets/service-account.png)
 
 ---
 
