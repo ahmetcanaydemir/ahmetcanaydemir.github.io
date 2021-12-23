@@ -23,8 +23,6 @@ First we need a bucket to store elasticsearch snapshots.
 
 You can create a bucket at Minio UI Console. Click **Buckets** from the left menu and click **Create Bucket**.
 
-![Creating Bucket](./assets/bucket.png)
-
 ---
 
 ## Creating a Service Account
@@ -34,8 +32,6 @@ A service account is also required to establish a minio connection with Elastics
 You can create a service account at Minio UI Console. Click **Service Accounts** from the left menu and click **Create Service Account**.
 
 Save the **Secret Key** and **Access Key**, we will use this information during the plugin installation.
-
-![Creating Service Account](./assets/service-account.png)
 
 ---
 
