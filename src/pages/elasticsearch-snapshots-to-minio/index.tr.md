@@ -1,5 +1,5 @@
 ---
-title: 'Elasticsearch snapshotlarını Minio''da saklama'
+title: 'Elasticsearch Snapshotlarını Minio''da Saklama'
 date: '2021-12-23'
 spoiler: 'Elasticsearch yedeklerinizi Minio''da tutun.'
 ---
