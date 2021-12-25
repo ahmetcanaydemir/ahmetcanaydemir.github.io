@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkahmetcanaydemircom=self.webpackChunkahmetcanaydemircom||[]).push([[941],{6941:function(e,a,c){c.r(a)}}]);
