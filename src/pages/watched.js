@@ -21,9 +21,8 @@ class WatchedIndex extends React.Component {
       return watched
         .filter(node => node.Title_Type === type)
         .map(node => {
-          const title = `${node.Title}`;
           return (
-            <article key={title}>
+            <article key={node.Const}>
               <header>
                 <h4
                   style={{
@@ -36,7 +35,7 @@ class WatchedIndex extends React.Component {
                     target="_blank"
                     rel="noopener no referrer"
                   >
-                    {title}
+                    {node.Title}
                   </a>
                 </h4>
                 <small>

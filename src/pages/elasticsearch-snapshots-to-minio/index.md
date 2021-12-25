@@ -1,5 +1,5 @@
 ---
-title: 'Elasticsearch snapshots to Minio'
+title: 'Elasticsearch Snapshots to Minio'
 date: '2021-12-23'
 spoiler: 'Store your elasticsearch backups in Minio repository.'
 ---
@@ -37,7 +37,7 @@ Save the **Secret Key** and **Access Key**, we will use this information during 
 
 ## Elasticsearch S3 Repository Plugin Installation
 
-Since Minio is compatible with Amazon AWS S3, we will use the S3 repository plugin. For this, all elasticsearch nodes are connected and the following steps are applied.
+Since Minio is compatible with Amazon AWS S3, we will use the S3 repository plugin. To install the plugin, connect to all elasticsearch nodes and follow the steps below.
 
 First of all, install `repository-s3` plugin with following command:
 

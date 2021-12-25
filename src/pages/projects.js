@@ -36,7 +36,7 @@ class ProjectsIndex extends React.Component {
                 <header>
                   <p>
                     <span style={{ fontWeight: '600' }}>
-                      <Link to={node.Link || '#'}>{title}</Link>{' '}
+                      <a href={node.Link || '#'} target="_blank" rel="noopener nofollow">{title}</a>{' '}
                     </span>{' '}
                     — {`${node.Description}`}
                   </p>

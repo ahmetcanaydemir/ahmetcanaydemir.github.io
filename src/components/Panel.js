@@ -2,7 +2,7 @@ import React from 'react';
 
 function Panel({ children, style = {} }) {
   return (
-    <p
+    <div
       style={{
         fontSize: '0.9em',
         border: '1px solid var(--hr)',
@@ -14,7 +14,7 @@ function Panel({ children, style = {} }) {
       }}
     >
       {children}
-    </p>
+    </div>
   );
 }
 
