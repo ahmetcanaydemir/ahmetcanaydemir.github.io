@@ -81,7 +81,7 @@
     &quot;Roboto&quot;, &quot;Oxygen&quot;, &quot;Ubuntu&quot;, &quot;Cantarell&quot;, &quot;Fira Sans&quot;,
     &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif"><span><span style="display:block">Written in:<!-- --> <b>English</b> • <a href="/tr/krakend-monitoring-with-grafana/">Türkçe</a></span></span></div></div></header><div><p><a href="/x/"></a></p>
 <p>KrakenD is an ultra-performant open-source Gateway that can transform, aggregate, or remove data from multiple services, with linear scalability.</p>
-<p>I will explain how to monitor the status of KrakenD services with Grafana dashboard.</p>
+<p>I will explain how to monitor the status of KrakenD services with the Grafana dashboard.</p>
 <p><span
       class="gatsby-resp-image-wrapper"
       style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
@@ -113,7 +113,7 @@
       />
   </a>
     </span></p>
-<p>Instead of creating a dashboard from scratch, we can use one of pre-configured dashboards available on grafana.com. In this article, we will use the KrakenD dashboard with ID 5722, prepared by <code class="language-text">dlopez</code>. If you want, you can customize the dashboard according to your needs.</p>
+<p>Instead of creating a dashboard from scratch, we can use one of the pre-configured dashboards available on grafana.com. In this article, we will use the KrakenD dashboard with ID 5722, prepared by <code class="language-text">dlopez</code>. If you want, you can customize the dashboard according to your needs.</p>
 <p>By default, this dashboard provides us with the following metrics:</p>
 <ul>
 <li>Requests from users to KrakenD</li>
@@ -124,7 +124,7 @@
 <li>Heatmaps</li>
 <li>Open connections</li>
 <li>Throughput</li>
-<li>Distributions, timers, garbage collection and etc.</li>
+<li>Distributions, timers, garbage collection, etc.</li>
 </ul>
 <h2 id="prerequisites" style="position:relative;"><a href="#prerequisites" aria-label="prerequisites permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Prerequisites</h2>
 <ul>
@@ -142,7 +142,7 @@
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">docker <span class="token builtin class-name">exec</span> -it influx-1.8 /bin/bash</code></pre></div>
 <hr>
 <h2 id="grafana-setup" style="position:relative;"><a href="#grafana-setup" aria-label="grafana setup permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Grafana Setup</h2>
-<p>If Grafana is not installed, you run it with Docker. After the following command Grafana will be running at <code class="language-text">http://localhost:3000</code>.</p>
+<p>If Grafana is not installed, you run it with Docker. After the following command, Grafana will be running at <code class="language-text">http://localhost:3000</code>.</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">docker run <span class="token punctuation">\</span> 
   -d <span class="token punctuation">\</span> 
   -p <span class="token number">3000</span>:3000 <span class="token punctuation">\</span> 
@@ -169,10 +169,10 @@
 <h2 id="importing-the-grafana-dashboard" style="position:relative;"><a href="#importing-the-grafana-dashboard" aria-label="importing the grafana dashboard permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Importing the Grafana Dashboard</h2>
 <ol>
 <li>
-<p>Go to the browser and open <a href="http://localhost:3000" target="_blank" rel="nofollow noopener noreferrer">http://localhost:3000</a>. Use <code class="language-text">admin</code> for both username and password</p>
+<p>Go to the browser and open <code class="language-text">http://localhost:3000</code>. Use <code class="language-text">admin</code> for both username and password</p>
 </li>
 <li>
-<p>Click <code class="language-text">Configuration</code> from side menu and find the button to add the data source. Select InfluxDB as the database and fill the details you provided when starting InfluxDB:</p>
+<p>Click <code class="language-text">Configuration</code> from the side menu and find the button to add the data source. Select InfluxDB as the database and fill in the details you provided when starting InfluxDB:</p>
 <ul>
 <li>Query Language: <code class="language-text">InfluxQL</code></li>
 <li>URL: <code class="language-text">http://localhost:8086</code></li>
