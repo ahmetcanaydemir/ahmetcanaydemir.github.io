@@ -41,7 +41,7 @@ class WatchedIndex extends React.Component {
                 <small>
                   {`${node.Year} • ${node.Runtime} minutes${ratingToStar(
                     node.Your_Rating
-                  )}`}
+                  )}`} / <span style={{ fontSize: rhythm(0.4)}}>10</span>
                 </small>
               </header>
             </article>
@@ -50,7 +50,7 @@ class WatchedIndex extends React.Component {
     };
     const ratingToStar = rating => {
       if (Number(rating)) {
-        return ` • ${new Array(Number(rating) || 0).fill('★').join('')}`;
+        return ` • ★ ${Number(rating)}`;
       }
       return '';
     };
