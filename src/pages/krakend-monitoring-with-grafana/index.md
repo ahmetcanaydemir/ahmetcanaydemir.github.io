@@ -8,11 +8,11 @@ spoiler: 'Monitor your KrakenD services with Grafana.'
 
 KrakenD is an ultra-performant open-source Gateway that can transform, aggregate, or remove data from multiple services, with linear scalability.
 
-I will explain how to monitor the status of KrakenD services with Grafana dashboard.
+I will explain how to monitor the status of KrakenD services with the Grafana dashboard.
 
 ![KrakenD Grafana Dashboard](./grafana-krakend.jpeg)
 
-Instead of creating a dashboard from scratch, we can use one of pre-configured dashboards available on grafana.com. In this article, we will use the KrakenD dashboard with ID 5722, prepared by `dlopez`. If you want, you can customize the dashboard according to your needs.
+Instead of creating a dashboard from scratch, we can use one of the pre-configured dashboards available on grafana.com. In this article, we will use the KrakenD dashboard with ID 5722, prepared by `dlopez`. If you want, you can customize the dashboard according to your needs.
 
 By default, this dashboard provides us with the following metrics:
 
@@ -24,7 +24,7 @@ By default, this dashboard provides us with the following metrics:
 - Heatmaps
 - Open connections
 - Throughput
-- Distributions, timers, garbage collection and etc.
+- Distributions, timers, garbage collection, etc.
 
 ## Prerequisites
 
@@ -53,7 +53,7 @@ docker exec -it influx-1.8 /bin/bash
 
 ## Grafana Setup
 
-If Grafana is not installed, you run it with Docker. After the following command Grafana will be running at `http://localhost:3000`.
+If Grafana is not installed, you run it with Docker. After the following command, Grafana will be running at `http://localhost:3000`.
 
 ```bash
 docker run \ 
@@ -90,9 +90,9 @@ Add the following configuration to your krakend.json at the root level. After th
 
 ## Importing the Grafana Dashboard
 
-1. Go to the browser and open http://localhost:3000. Use `admin` for both username and password
+1. Go to the browser and open `http://localhost:3000`. Use `admin` for both username and password
 
-2. Click `Configuration` from side menu and find the button to add the data source. Select InfluxDB as the database and fill the details you provided when starting InfluxDB:
+2. Click `Configuration` from the side menu and find the button to add the data source. Select InfluxDB as the database and fill in the details you provided when starting InfluxDB:
 
    - Query Language: `InfluxQL`
    - URL: `http://localhost:8086`
