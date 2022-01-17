@@ -6,7 +6,7 @@ spoiler: 'Store your elasticsearch backups in Minio repository.'
 
 [](/x/)
 
-Minio is a high performance, self-hosted AWS S3 compatible object storage solution.
+Minio is a high-performance, self-hosted AWS S3 compatible object storage solution.
 
 I will explain how we can store Elasticsearch snapshots in Minio.
 
@@ -19,25 +19,29 @@ I will explain how we can store Elasticsearch snapshots in Minio.
 
 ## Creating Bucket
 
-First we need a bucket to store elasticsearch snapshots.
+First, we need a bucket to store Easticsearch snapshots.
 
 You can create a bucket at Minio UI Console. Click **Buckets** from the left menu and click **Create Bucket**.
+
+![Creating Bucket](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/iippohmwlinkwrcxern2.png)
 
 ---
 
 ## Creating a Service Account
 
-A service account is also required to establish a minio connection with Elasticsearch.
+A service account is also required to establish a Minio connection with Elasticsearch.
 
 You can create a service account at Minio UI Console. Click **Service Accounts** from the left menu and click **Create Service Account**.
 
 Save the **Secret Key** and **Access Key**, we will use this information during the plugin installation.
 
+![Creating Service Account](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8ejh1gjw6wu1nw53ds1s.png)
+
 ---
 
 ## Elasticsearch S3 Repository Plugin Installation
 
-Since Minio is compatible with Amazon AWS S3, we will use the S3 repository plugin. To install the plugin, connect to all elasticsearch nodes and follow the steps below.
+Since Minio is compatible with Amazon AWS S3, we will use the S3 repository plugin. To install the plugin, connect to all Elasticsearch nodes and follow the steps below.
 
 First of all, install `repository-s3` plugin with following command:
 
@@ -45,7 +49,7 @@ First of all, install `repository-s3` plugin with following command:
 /usr/share/elasticsearch/bin/elasticsearch-plugin install repository-s3
 ```
 
-An S3 client named `default` will be created after plugin installed. Actions to be taken can be performed by this client. We will define the `access_key` and `secret_key` information to the default client for accessing minio.
+An S3 client named `default` will be created after the plugin is installed. Actions to be taken can be performed by this client. We will define the `access_key` and `secret_key` information to the default client for accessing Minio.
 
 ```bash
 /usr/share/elasticsearch/bin/elasticsearch-keystore add s3.client.default.secret_key
@@ -55,7 +59,7 @@ An S3 client named `default` will be created after plugin installed. Actions to 
 # Waiting for access key
 ```
 
-After this stage, elasticsearch service should be restarted.
+After this stage, the Elasticsearch service should be restarted.
 
 ```bash
 systemctl restart elasticsearch
@@ -65,7 +69,7 @@ systemctl restart elasticsearch
 
 ## Adding Elasticsearch Repository
 
-A repository named `my-minio-repository` can be created by sending following request:
+A repository named `my-minio-repository` can be created by sending the following request:
 
 ```bash
 PUT _snapshot/my-minio-repository {
@@ -82,9 +86,9 @@ PUT _snapshot/my-minio-repository {
 
 ---
 
-## Manual snapshot
+## Manual Snapshot
 
-A snapshot named `my-first-snapshot` can be taken manually by sending following request:
+A snapshot named `my-first-snapshot` can be taken manually by sending the following request:
 
 ```bash
 PUT /_snapshot/my-minio-repository/my-first-snapshot?wait_for_completion=true
@@ -92,9 +96,9 @@ PUT /_snapshot/my-minio-repository/my-first-snapshot?wait_for_completion=true
 
 ---
 
-## Taking snapshots with policy
+## Taking Snapshots with Policy
 
-If desired, the snapshot process can be automated using the `snapshot policy`. For example, the policy below will save snapshots of all indexes to the minio repository at 07:30 every day.
+If desired, the snapshot process can be automated using `snapshot policy`. For example, the policy below will save snapshots of all indexes to the Minio repository at 07:30 every day.
 
 ```bash
 PUT _slm/policy/daily-snapshots
@@ -117,4 +121,4 @@ POST /_snapshot/my-minio-repository/my-first-snapshot/_restore
 
 ## Resource
 
-https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshot-restore.html
+[Snapshot and restore](https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshot-restore.html)

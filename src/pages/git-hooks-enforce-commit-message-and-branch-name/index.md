@@ -7,16 +7,17 @@ spoiler: 'Branch and commit rules with git hooks'
 [](/x/)
 
 If you want to standardize things among your team, you may need to enforce strict rules. Some examples of rules might be for git are:
-- Branches must be created as ISSUE-0000/feature-name.
-- All commit messages must start with ISSUE-0000 (Jira issue id).
 
-In this post I will show you how we can add the two rules I mentioned using git hooks.
+- Branches must be created as ISSUE-0000/feature-name.
+- All commit messages must start as ISSUE-0000 (Jira issue id).
+
+In this post, I will show you how we can add the two rules I mentioned using git hooks.
 
 ---
 
-There are multiple [git hooks](https://git-scm.com/docs/githooks) that work in different stages. We will use two client side hooks for our rules.
+There are multiple [git hooks](https://git-scm.com/docs/githooks) that work in different stages. We will use two client-side hooks for our rules.
 
-- **pre-commit:** This hook is invoked by git-commit, and can be bypassed with the `--no-verify` option. We will use this hook for checking the branch name before commit.
+- **pre-commit:** This hook is invoked by git-commit, and can be bypassed with the `--no-verify` option. We will use this hook for checking the branch name before committing.
 - **commit-msg:** This hook is invoked by git-commit and git-merge, and can be bypassed with the `--no-verify` option. It takes a single parameter, the name of the file that holds the proposed commit message. We will use this hook for checking the commit message. And we will modify the commit message if needed.
 
 ## Creating Hooks Folder
@@ -38,20 +39,22 @@ chmod +x commit-msg
 
 ## Restricting Branch Names
 
-We will accept branch names as ISSUE-0000/feature-name but we have to consider also other branch names like `main`, `develop`, `release` etc. For this we can use following regular expression.
+We will accept branch names as ISSUE-0000/feature-name but we have to consider also other branch names like `main`, `develop`, `release` etc. For this, we can use the following regular expression.
 
 ```bash
 REGEX_ISSUE_ID="^(ISSUE-[0-9]+\/([a-zA-Z0-9]|-)+|develop|main|release"
 ```
 
 We also need the branch name:
+
 ```bash
 git rev-parse --abbrev-ref HEAD
 ```
 
-Thats it! We have regex and we have branch name. We will check for branch name starts with `ISSUE-0000/feature-name` or `develop` or `main` or `release`. If our check fails we will echo our error message and exit with `exit code 1`.
+That's it! We have regex and we have branch name. We will check for branch name starts with `ISSUE-0000/feature-name` or `develop` or `main` or `release`. If our check fails we will echo our error message and exit with `exit code 1`.
 
 `pre-commit`
+
 ```bash
 #!/bin/bash
 
@@ -69,25 +72,26 @@ fi
 
 ## Restricting Commit Messages
 
-
-Steps are similar to restricting branch names. But if there is no issue id in the commit message, we will look at the branch name and try to get it from there. If issue id is also not in branch name, we will throw an error.
+Steps are similar to restricting branch names. But if there is no issue id in the commit message, we will look at the branch name and try to get it from there. If the issue id is also not in the branch name, we will throw an error.
 
 ```bash
 REGEX_ISSUE_ID="^(ISSUE-[0-9]+|Merge|hotfix)"
 ```
 
-Our first argument `$1` gives us commit-msg file. We can read commit message with following command:
+Our first argument `$1` gives us the commit-msg file. We can read the commit message with the following command:
+
 ```bash
 cat "$1"
 ```
 
-We have regex and we have commit message name, and from last step we know how to get branch name. We will check for commit message starts with `ISSUE-0000` or `Merge` or `hotfix`.
+We have regex and we have to commit message name, and from the last step, we know how to get branch name. We will check for commit message starts with `ISSUE-0000` or `Merge` or `hotfix`.
 
-If commit check fails we will check our branch name and parse the issue id and insert to commit message.
+If the commit check fails we will check our branch name and parse the issue id and insert to commit message.
 
 If our check fails again we will echo our error message and exit with `exit code 1`.
 
 `commit-msg`
+
 ```bash
 #!/bin/bash
 
@@ -111,7 +115,8 @@ fi
 
 ## Usage
 
-Go to project folder and run following command to use your hooks. You need to make this for every project that you want to use hooks.
+Go to the project folder and run the following command to use your hooks. You need to make this for every project that you want to use hooks.
+
 ```bash
 cd <your-team-repository>
 git config core.hooksPath ~/hooks
@@ -121,4 +126,4 @@ git config core.hooksPath ~/hooks
 
 ## Sharing With Team Members
 
-You need to share your `~/hooks` folder. You can share with a git repository or you can send folder directly to your team.
+You need to share your `~/hooks` folder. You can share with a git repository or you can send the folder directly to your team.

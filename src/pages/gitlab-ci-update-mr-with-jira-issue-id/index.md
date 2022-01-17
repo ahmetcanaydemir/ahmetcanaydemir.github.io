@@ -6,16 +6,15 @@ spoiler: 'Update MR title and description with Jira Issue Id'
 
 [](/x/)
 
-
-In [my previous article](/git-hooks-enforce-commit-message-and-branch-name/), we enforced branch names and commit messages to certain rules. Now I will go a step further. When a MR is opened, if there is Jira issue id (eg. ISSUE-0000) in the title, we will pull the Jira title and description and update MR. CI will fail if there is no Jira Issue Id in the title.
+In [my previous article](/git-hooks-enforce-commit-message-and-branch-name/), we enforced branch names and commit messages to certain rules. Now I will go a step further. When an MR is opened, if there is a Jira issue id (eg. ISSUE-0000) in the title, we will pull the Jira title and description and update MR. CI will fail if there is no Jira Issue Id in the title.
 
 ---
 
 To do this, we can briefly follow these steps.
 
 1. Check if there is an issue id in the MR title. Otherwise, return fail exit code. We will use regex for this. `$CI_MERGE_REQUEST_TITLE` will give us the MR header.
-2. Extract Issue Id and pull data from Jira API. When you make a GET request to the `https://jira.<your-hostname>/rest/api/2/issue/ISSUE-0000` jira address, Issue details will be returned to you as JSON.
-3. Take the `summary` and `description` parts from the json data returned by Jira API wit jq and assign them to variables.
+2. Extract Issue Id and pull data from Jira API. When you make a GET request to the `https://jira.<your-hostname>/rest/api/2/issue/ISSUE-0000` Jira address, Issue details will be returned to you as JSON.
+3. Take the `summary` and `description` parts from the JSON data returned by Jira API with `jq` and assign them to variables.
 4. Update MR's title and description using GitLab API.
 
 
@@ -43,7 +42,7 @@ ISSUE_ID_IN_MR=$(echo "$CI_MERGE_REQUEST_TITLE" | grep -o -E "$REGEX_ISSUE_ID")
 
 ## Jira Issue Parsing
 
-We store new lines (eg. `\n`) as characters in `DESCRIPTION_JSON` variable because new lines are problem when sending curl requests.
+We store new lines (eg. `\n`) as characters in `DESCRIPTION_JSON` variable because newlines are the problem when sending curl requests.
 
 ```bash
 JSON=$(curl -s -u <jira-username>:<jira-password> -X GET -H "Content-Type:application/json" "https://jira.<your-hostname>/rest/api/2/issue/$ISSUE_ID_IN_MR")
@@ -57,7 +56,7 @@ DESCRIPTION_JSON=$(jq --null-input --compact-output --arg msg "$DESCRIPTION" '$m
 
 ## Updating Merge Request
 
-You need private token for this [check GitLab documentation](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html) and learn how to do that.
+You need a private token for this [check GitLab documentation](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html) and learn how to do that.
 
 ```bash
 curl -v \
