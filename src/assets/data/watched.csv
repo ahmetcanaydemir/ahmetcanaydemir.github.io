@@ -1,4 +1,4 @@
-Const,Your Rating,Date Rated,Title,URL,Title Type,IMDb Rating,Runtime (mins),Year,Genres,Num Votes,Release Date,Directors
+Const,Your Rating,Date Rated,Title,URL,Title Type,IMDb Rating,Runtime,Year,Genres,Num Votes,Release Date,Directors
 tt1010048,8,2019-08-13,Slumdog Millionaire,https://www.imdb.com/title/tt1010048/,movie,8.0,120,2008,"Drama, Romance",828331,2008-08-30,"Loveleen Tandan, Danny Boyle"
 tt0101414,8,2019-05-09,Beauty and the Beast,https://www.imdb.com/title/tt0101414/,movie,8.0,84,1991,"Animation, Family, Fantasy, Musical, Romance",435261,1991-09-29,"Kirk Wise, Gary Trousdale"
 tt1028532,8,2018-01-07,Hachi: A Dog's Tale,https://www.imdb.com/title/tt1028532/,movie,8.1,93,2009,"Biography, Drama, Family",273947,2009-06-13,Lasse Hallström
