@@ -212,7 +212,7 @@ With using `SimpleHttpOperator` we send a `GET` HTTP request to the `user_api` c
     )
 ```
 
-### 5. Processing the API Result
+### 6. Processing the API Result
 
 With using `PythonOperator`, we will keep only the desired fields of the python object that we obtained in step 5. And we will save the result as csv file.
 
@@ -243,7 +243,7 @@ def _processing_user(ti):
     processed_user.to_csv('/tmp/processed_user.csv', index=None, header=False)
 ```
 
-### 6. Saving Processed Users to SQLite DB
+### 7. Saving Processed Users to SQLite DB
 
 We can use `BashOperator` for trying new operators. `BashOperator` allows us to run bash commands.
 
@@ -254,7 +254,7 @@ storing_user = BashOperator(
     )
 ```
 
-### 7. Relationship Between Tasks
+### 8. Relationship Between Tasks
 
 Simply, the direction of the tasks and their connection with each other can be defined as follows.
 

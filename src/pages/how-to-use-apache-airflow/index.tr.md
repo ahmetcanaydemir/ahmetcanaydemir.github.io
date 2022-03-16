@@ -210,7 +210,7 @@ is_api_available = HttpSensor(
     )
 ```
 
-### 5. API Sonucunu İşleme
+### 6. API Sonucunu İşleme
 
 `PythonOperator` kullanarak 5. adımda elde ettiğimiz python objesinin sadece istediğimiz alanlarını csv dosyasına kaydedeceğiz.
 
@@ -241,7 +241,7 @@ def _processing_user(ti):
     processed_user.to_csv('/tmp/processed_user.csv', index=None, header=False)
 ```
 
-### 6. İşlenmiş Kullanıcıları SQLite DB’ye Kaydetme
+### 7. İşlenmiş Kullanıcıları SQLite DB’ye Kaydetme
 
 Burada da farklılık olsun diye `BashOperator` kullanabiliriz. `BashOperator` bash komutları çalıştırmamızı sağlar.
 
@@ -252,7 +252,7 @@ storing_user = BashOperator(
     )
 ```
 
-### 7. Tasklar Arasındaki İlişki
+### 8. Tasklar Arasındaki İlişki
 
 Basitçe aşağıdaki şekilde taskların yönü ve birbirleri ile bağlantısını tanımlanabilir.
 
@@ -261,7 +261,7 @@ Basitçe aşağıdaki şekilde taskların yönü ve birbirleri ile bağlantısı
 creating_table >> is_api_available >> extracting_user >> processing_user >> storing_user
 ```
 
-### 8. Tamamlanmış DAG Dosyası
+### Tamamlanmış DAG Dosyası
 
 ```python
 from datetime import datetime
