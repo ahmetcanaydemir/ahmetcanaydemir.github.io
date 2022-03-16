@@ -351,7 +351,7 @@ Konsepti anlamak adına basit ve paralellik gerektirmeyen bir datapipeline tanı
 ## Ekran Görüntüleri
 
 <details>
-<summary markdown="span">Show Screenshots</summary>
+<summary markdown="span">Ekran Görüntülerini Göster</summary>
 
 ![Graph View](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/a3a0r96acrkak6cfceck.png)
  
