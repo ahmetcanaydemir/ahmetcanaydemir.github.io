@@ -24,12 +24,22 @@ class BlogIndexTemplate extends React.Component {
           <Bio />
         </aside>
         <main>
+        <h1
+            style={{
+              marginBottom: rhythm(1),
+              marginTop: 0,
+              border: 0,
+              display: "none"
+            }}
+          >
+            About
+          </h1>
           {posts.map(({ node }) => {
             const title = get(node, 'frontmatter.title') || node.fields.slug;
             return (
               <article key={node.fields.slug}>
                 <header>
-                  <h1
+                  <h2
                     style={{
                       fontFamily: 'Montserrat, sans-serif',
                       fontSize: rhythm(1),
@@ -45,7 +55,7 @@ class BlogIndexTemplate extends React.Component {
                     >
                       {title}
                     </Link>
-                  </h1>
+                  </h2>
                   <small>
                     {formatPostDate(node.frontmatter.date, langKey)}
                     {` • ${formatReadingTime(node.timeToRead)}`}

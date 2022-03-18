@@ -24,7 +24,7 @@ class Layout extends React.Component {
     const rootPath = `${__PATH_PREFIX__}/`;
 
     return (
-      <h1
+      <div
         style={{
           ...scale(0.75),
           marginBottom: 0,
@@ -68,7 +68,7 @@ class Layout extends React.Component {
             </Link>
           </div>
         </div>
-      </h1>
+      </div>
     );
   }
   render() {
