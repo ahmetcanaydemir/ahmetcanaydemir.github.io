@@ -21,7 +21,7 @@ const GITHUB_REPO_NAME = 'ahmetcanaydemir.github.io';
 const systemFont = `system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
     "Droid Sans", "Helvetica Neue", sans-serif`;
-
+    
 class Translations extends React.Component {
   render() {
     let { translations, lang, languageLink, editUrl } = this.props;
@@ -31,7 +31,7 @@ class Translations extends React.Component {
 
     return (
       <div className="translations">
-        <Panel style={{ fontFamily: systemFont }}>
+        <Panel>
           {translations.length > 0 && (
             <span>
               {hasTurkishTranlation && (
