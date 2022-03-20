@@ -4,8 +4,6 @@ date: '2021-12-02'
 spoiler: 'Update MR title and description with Jira Issue Id'
 ---
 
-[](/x/)
-
 In [my previous article](/git-hooks-enforce-commit-message-and-branch-name/), we enforced branch names and commit messages to certain rules. Now I will go a step further. When an MR is opened, if there is a Jira issue id (eg. ISSUE-0000) in the title, we will pull the Jira title and description and update MR. CI will fail if there is no Jira Issue Id in the title.
 
 ---
@@ -16,7 +14,6 @@ To do this, we can briefly follow these steps.
 2. Extract Issue Id and pull data from Jira API. When you make a GET request to the `https://jira.<your-hostname>/rest/api/2/issue/ISSUE-0000` Jira address, Issue details will be returned to you as JSON.
 3. Take the `summary` and `description` parts from the JSON data returned by Jira API with `jq` and assign them to variables.
 4. Update MR's title and description using GitLab API.
-
 
 ---
 

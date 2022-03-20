@@ -4,8 +4,6 @@ date: '2022-03-16'
 spoiler: 'Apache Airflow nedir ve nasıl kullanılır.'
 ---
 
-[](/x/)
-
 ## Apache Airflow Nedir
 
 Airflow; taskları doğru zamanda, doğru sırayla ve doğru bir şekilde çalıştırmayı sağlayan bir orkestrasyon aracıdır.

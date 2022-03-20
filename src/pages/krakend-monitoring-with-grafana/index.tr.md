@@ -4,8 +4,6 @@ date: '2022-01-17'
 spoiler: 'KrakenD servislerinizi Grafana ile takip edin.'
 ---
 
-[](/x/)
-
 KrakenD, bir veya daha fazla servisten gelen verileri dönüştürebilen, birleştirebilien ve silebilen çok yüksek performanslı, ölçeklendirilebilir açık kaynak kodlu gatewaydir.
 
 Grafana dashboardu üzerinden KrakenD servislerimizin durumunu nasıl takip edeceğimizi açıklayacağım.

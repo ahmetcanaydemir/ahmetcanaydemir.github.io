@@ -4,8 +4,6 @@ date: '2021-12-23'
 spoiler: 'Store your elasticsearch backups in Minio repository.'
 ---
 
-[](/x/)
-
 Minio is a high-performance, self-hosted AWS S3 compatible object storage solution.
 
 I will explain how we can store Elasticsearch snapshots in Minio.

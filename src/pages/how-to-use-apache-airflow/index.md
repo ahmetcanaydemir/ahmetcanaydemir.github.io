@@ -4,8 +4,6 @@ date: '2022-03-16'
 spoiler: 'Basic introduction to Apache Airflow.'
 ---
 
-[](/x/)
-
 ## What is Apache Airflow
 
 Airflow is an orchestration tool that ensures that tasks are running at the right time, in the correct order, and in the right way.

@@ -4,8 +4,6 @@ date: '2022-01-17'
 spoiler: 'Monitor your KrakenD services with Grafana.'
 ---
 
-[](/x/)
-
 KrakenD is an ultra-performant open-source Gateway that can transform, aggregate, or remove data from multiple services, with linear scalability.
 
 I will explain how to monitor the status of KrakenD services with the Grafana dashboard.

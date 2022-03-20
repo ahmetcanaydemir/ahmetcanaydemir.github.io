@@ -4,8 +4,6 @@ date: '2021-01-07'
 spoiler: 'New things in the new year, so I started by renewing my website.'
 ---
 
-[](/x/)
-
 Finally I did it, I renewed my personal website.
 
 We entered the 2021, every new year people are in search of a change in their lives. For a long time, I have been thinking of renewing my website. I haven't been blogging for a long time. Renewing my site can also be an important opportunity to start blogging. I'm not sure how much I can achieve, but this year I plan to focus more on blog posts, YouTube videos and open source projects.

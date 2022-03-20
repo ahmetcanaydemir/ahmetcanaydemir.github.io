@@ -4,15 +4,11 @@ date: '2021-12-02'
 spoiler: 'Jira Issue Id ile MR başlığını ve açıklamasını güncelleyin'
 ---
 
-[](/x/)
-
-
 Bir [önceki yazımda](/git-hooks-enforce-commit-message-and-branch-name/) branch isimlerini ve commit mesajlarını belirli kurallara bağlamıştık. Şimdi bir adım daha ileri gideceğim. MR açıldığında başlığında Jira issue id (örn. ISSUE-0000) varsa, başlığa jira'daki başlığını ve açıklamaya jiradaki açıklamayı çekeceğiz. Eğer başlıkta Jira Issue Id hiç yoksa CI fail olacak.
 
 ---
 
 Bunu yapmak için özetle şu adımları takip edebiliriz.
-
 
 1. MR başlığında issue id var mı kontrol et. Yoksa fail döndür. Bunun için regex kullanacağız. `$CI_MERGE_REQUEST_TITLE` bize MR başlığını verecektir.
 2. Issue Id'yi ayıkla ve Jira API'ından verileri çek. `https://jira.<your-hostname>/rest/api/2/issue/ISSUE-0000` jira adresine GET isteği yaptığınızda size JSON olarak Issue detayları dönecektir.
@@ -79,7 +75,6 @@ curl -v \
 ## Sonuç
 
 Tüm bunları bir GitLab CI yml dosyasında birleştirdiğimizde şöyle görünecekir.
-
 
 ```yml
 check_mr:

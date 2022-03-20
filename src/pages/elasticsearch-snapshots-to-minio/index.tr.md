@@ -4,8 +4,6 @@ date: '2021-12-23'
 spoiler: 'Elasticsearch yedeklerinizi Minio''da tutun.'
 ---
 
-[](/x/)
-
 Minio yüksek performanslı, self-hosted AWS S3 uyumlu object storage çözümüdür.
 
 Elasticsearch snapshotlarını Minio'da nasıl saklayabileceğimizi açıklayacağım.
@@ -118,4 +116,4 @@ POST /_snapshot/my-minio-repository/my-first-snapshot/_restore
 
 ## Kaynak
 
-https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshot-restore.html
+[Snapshot and restore](https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshot-restore.html)

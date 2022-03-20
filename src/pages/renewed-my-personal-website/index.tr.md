@@ -4,8 +4,6 @@ date: '2021-01-07'
 spoiler: 'Yeni yılda yeni şeyler yapmak gerek, ben de websitemi yenileyerek başlaedım.'
 ---
 
-[](/x/)
-
 Sonunda yaptım, kişisel internet sitemi yeniledim.
 
 2021 yılına girdik, her yeni yılda insanlar kendi hayatlarında bir yenilik arayışı içerisindeler. Uzun süredir ben de internet sitemi yenilemeyi düşünüyordum. Uzun zamandır hiç blog yazmıyordum. Sitemi yenilemek, blog yazmaya başlamak için de önemli bir fırsat olabilir. Ne kadar başarabilirim emin değilim am bu sene blog yazıları, YouTube videoları ve açık kaynak projeler üzerinde yoğunlaşmayı planlıyorum.

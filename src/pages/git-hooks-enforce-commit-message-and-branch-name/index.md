@@ -4,8 +4,6 @@ date: '2021-12-01'
 spoiler: 'Branch and commit rules with git hooks'
 ---
 
-[](/x/)
-
 If you want to standardize things among your team, you may need to enforce strict rules. Some examples of rules might be for git are:
 
 - Branches must be created as ISSUE-0000/feature-name.
