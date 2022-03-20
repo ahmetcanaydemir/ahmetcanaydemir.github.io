@@ -1,2 +1,4 @@
 User-agent: *
 Disallow:
+
+Sitemap: https://ahmetcanaydemir.com/sitemap/sitemap-index.xml
