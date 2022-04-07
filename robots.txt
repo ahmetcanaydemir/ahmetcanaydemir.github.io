@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://ahmetcanaydemir.com/sitemap/sitemap-index.xml
+Sitemap: https://ahmetcan.org/sitemap/sitemap-index.xml
