@@ -83,7 +83,7 @@ class About extends React.Component {
             </p>
             <p>
               If you have any questions feel free to send an email to{' '}
-              <strong>root @ ahmetcan.org</strong>
+              <strong>a @ ahmetcan.org</strong>
             </p>
           </article>
         </main>
