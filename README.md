@@ -1,4 +1,4 @@
-# [ahmetcanaydemir.com](https://ahmetcanaydemir.com/)
+# [ahmetcan.org](https://ahmetcan.org/)
 
 My personal website. Forked from [Dan Abramov](https://github.com/gaearon)'s [overreacted.io](https://github.com/gaearon/overreacted.io).
 

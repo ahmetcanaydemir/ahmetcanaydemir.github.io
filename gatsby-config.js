@@ -3,7 +3,7 @@ module.exports = {
     title: 'Ahmet Can Aydemir',
     author: 'Ahmet Can Aydemir',
     description: 'Personal website by Ahmet Can Aydemir.',
-    siteUrl: 'https://ahmetcanaydemir.com',
+    siteUrl: 'https://ahmetcan.org',
     social: {
       twitter: '@ahmetcnaydemir',
     },
@@ -80,7 +80,7 @@ module.exports = {
               return allMarkdownRemark.edges.map(edge => {
                 const siteUrl = site.siteMetadata.siteUrl;
                 const postText = `
-                <div style="margin-top=55px; font-style: italic;">(This is an article posted to my blog at ahmetcanaydemir.com. You can read it online by <a href="${siteUrl +
+                <div style="margin-top=55px; font-style: italic;">(This is an article posted to my blog at ahmetcan.org. You can read it online by <a href="${siteUrl +
                   edge.node.fields.slug}">clicking here</a>.)</div>
               `;
 
