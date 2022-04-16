@@ -38,6 +38,14 @@ class Footer extends React.Component {
           rel="noopener noreferrer"
         >
           linkedin
+        </a>{' '}
+        &bull;{' '}
+        <a
+          href="https://dev.to/ahmetcanaydemir"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          dev.to
         </a>
       </footer>
     );
