@@ -28,12 +28,12 @@ class Bio extends React.Component {
           }}
         >
           Personal blog by{' '}
-          <a href="https://mobile.twitter.com/ahmetcnaydemir">
+          <a href="https://twitter.com/ahmetcnaydemir">
             Ahmet Can Aydemir
           </a>
           .
           <br />
-          My thoughts about Programming and things.
+          My thoughts about programming and other things.
         </p>
       </div>
     );
