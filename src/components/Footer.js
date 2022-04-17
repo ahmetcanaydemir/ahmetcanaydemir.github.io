@@ -17,7 +17,7 @@ class Footer extends React.Component {
           </a>
         </div>
         <a
-          href="https://mobile.twitter.com/ahmetcnaydemir"
+          href="https://twitter.com/ahmetcnaydemir"
           target="_blank"
           rel="noopener noreferrer"
         >
