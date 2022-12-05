@@ -30,13 +30,13 @@ class About extends React.Component {
             <p>Hi there,</p>
             <p>
               My name is <strong>Ahmet Can Aydemir</strong> and I'm a Software
-              Engineer at{' '}
+              Development Engineer at{' '}
               <a
-                href="https://www.hepsiburada.com/"
+                href="https://www.amazon.com/"
                 target="_blank"
                 rel="noopener nofollow"
               >
-                Hepsiburada
+                Amazon
               </a>
               .
             </p>
