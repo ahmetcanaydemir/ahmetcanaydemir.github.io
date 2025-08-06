@@ -8,7 +8,7 @@
     "url": "https://github.com/ahmetcanaydemir/ahmetcanaydemir.github.io/issues"
   },
   "dependencies": {
-    "gatsby": "^4.4.0",
+    "gatsby": "^5.14.6",
     "gatsby-plugin-catch-links": "^4.4.0",
     "gatsby-plugin-feed": "^4.4.0",
     "gatsby-plugin-google-analytics": "^4.4.0",
