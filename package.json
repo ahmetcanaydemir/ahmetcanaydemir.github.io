@@ -43,7 +43,7 @@
     "typography-theme-wordpress-2016": "^0.16.19"
   },
   "devDependencies": {
-    "eslint": "^8.5.0",
+    "eslint": "^9.26.0",
     "eslint-plugin-react": "^7.28.0",
     "gh-pages": "^3.2.3",
     "glob": "^7.2.0",
