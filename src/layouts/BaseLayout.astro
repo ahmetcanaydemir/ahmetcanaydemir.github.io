@@ -1,0 +1,79 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SEO from '../components/SEO.astro';
+import faviconIcon from '../assets/icon.png';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogType?: 'website' | 'article';
+  publishedDate?: Date;
+  jsonLd?: Record<string, unknown>;
+}
+
+const { title, description, ogType = 'website', publishedDate, jsonLd } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#282c35" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" type="image/png" href={faviconIcon.src} />
+    <link rel="apple-touch-icon" href={faviconIcon.src} />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Ahmet Can Aydemir"
+      href="/rss.xml"
+    />
+    <SEO
+      title={title}
+      description={description}
+      ogType={ogType}
+      publishedDate={publishedDate}
+    />
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+    <script is:inline>
+      // Read stored theme synchronously to prevent flash on load.
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var theme = stored || (prefersDark ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <main id="main">
+      <Header />
+      <slot />
+      <Footer />
+    </main>
+    <script is:inline>
+      (function () {
+        var heading = 'color: #1f871b; font-weight: 700; font-size: 14px;';
+        var body = 'color: inherit; font-size: 12px;';
+        console.log('%cHey there 👋', heading);
+        console.log(
+          '%cPoking around in the source? Source is at https://github.com/ahmetcanaydemir/ahmetcanaydemir.github.io',
+          body
+        );
+        console.log(
+          '%cIf you find a typo or something broken, drop me a line at ahmetcan@ahmetcan.org.',
+          body
+        );
+      })();
+    </script>
+  </body>
+</html>

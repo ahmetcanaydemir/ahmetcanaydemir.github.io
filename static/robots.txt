@@ -1,4 +1,0 @@
-User-agent: *
-Disallow:
-
-Sitemap: https://ahmetcan.org/sitemap/sitemap-index.xml

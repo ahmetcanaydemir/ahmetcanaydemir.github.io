@@ -1,0 +1,128 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import aboutCover from '../assets/about-cover.jpg';
+---
+
+<BaseLayout title="About" description="About Ahmet Can Aydemir.">
+  <article class="about-content">
+    <h1>About this site</h1>
+    <p class="about-lede">
+      I write here mostly to remember things I figured out at work, and sometimes about
+      whatever else is on my mind.
+    </p>
+
+    <figure class="about-cover">
+      <Image
+        src={aboutCover}
+        alt="Ahmet Can Aydemir"
+        widths={[360, 480, 720]}
+        sizes="(min-width: 760px) 440px, 100vw"
+        quality={82}
+        loading="eager"
+        decoding="async"
+      />
+    </figure>
+
+    <p>Hi,</p>
+    <p>
+      My name is <strong>Ahmet Can Aydemir</strong>{' '}
+      <button
+        type="button"
+        class="intro-pronounce"
+        aria-label="Play pronunciation of Ahmet Can"
+        data-pronounce-button
+      >
+        <span class="pronounce">/ɑhˈmet dʒɑn/</span>
+        <svg
+          class="pronounce-icon"
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+        </svg>
+      </button>
+      <audio src="/pronounce.m4a" preload="none" data-pronounce-audio></audio>, and I'm a
+      Software Development Engineer II at{' '}
+      <a href="https://www.amazon.com/" target="_blank" rel="noopener nofollow">Amazon</a
+      >, based in London. I work on the platform behind Fire TV. The product ships on Fire
+      OS and Vega OS, runs on millions of devices, and most of my code is invisible to the
+      people using it.
+    </p>
+    <p>
+      Before London I was in Istanbul, working on backend systems at Hepsiburada and
+      Teknasyon, and on tooling at P.I. Works during university. Since 2017 I've also run{
+        ' '
+      }
+      <a href="https://www.kodvizit.com/" target="_blank" rel="noopener nofollow"
+        >kodvizit</a
+      >{' '}
+      on the side, a small product I built that runs in 300+ schools in Türkiye.
+    </p>
+    <p>
+      My main interests are distributed systems, low-level platform work, Go, and the
+      small details that make software feel right.
+    </p>
+    <p>
+      The best way to reach me is email: <strong>ahmetcan at ahmetcan dot org</strong>.
+    </p>
+    <p>I'm also on a few other places:</p>
+    <ul class="about-links">
+      <li>
+        GitHub:{' '}
+        <a
+          href="https://github.com/ahmetcanaydemir"
+          target="_blank"
+          rel="noopener nofollow">@ahmetcanaydemir</a
+        >
+      </li>
+      <li>
+        LinkedIn:{' '}
+        <a
+          href="https://linkedin.com/in/ahmetcanaydemir"
+          target="_blank"
+          rel="noopener nofollow">@ahmetcanaydemir</a
+        >
+      </li>
+      <li>
+        X:{' '}
+        <a
+          href="https://twitter.com/ahmetcnaydemir"
+          target="_blank"
+          rel="noopener nofollow">@ahmetcnaydemir</a
+        >
+      </li>
+      <li>
+        dev.to:{' '}
+        <a href="https://dev.to/ahmetcanaydemir" target="_blank" rel="noopener nofollow"
+          >@ahmetcanaydemir</a
+        >
+      </li>
+    </ul>
+  </article>
+
+  <script>
+    const button = document.querySelector(
+      '[data-pronounce-button]'
+    ) as HTMLButtonElement | null;
+    const audio = document.querySelector(
+      '[data-pronounce-audio]'
+    ) as HTMLAudioElement | null;
+    if (button && audio) {
+      button.addEventListener('click', () => {
+        audio.currentTime = 0;
+        audio.play().catch(() => {});
+        button.classList.add('is-playing');
+      });
+      audio.addEventListener('ended', () => button.classList.remove('is-playing'));
+    }
+  </script>
+</BaseLayout>

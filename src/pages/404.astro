@@ -1,0 +1,71 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import adamsPhoto from '../assets/douglas-adams-grave.jpg';
+---
+
+<BaseLayout
+  title="Don't Panic"
+  description="The page you were looking for doesn't exist."
+>
+  <section class="not-found">
+    <h1>Don't Panic.</h1>
+    <p class="not-found-lede">
+      The page you wanted is gone. Here's me at Douglas Adams' grave instead.
+    </p>
+
+    <figure class="not-found-photo">
+      <Image
+        src={adamsPhoto}
+        alt="Ahmet Can Aydemir at Douglas Adams' grave in Highgate Cemetery"
+        widths={[360, 480, 720]}
+        sizes="(min-width: 760px) 440px, 100vw"
+        quality={82}
+        loading="eager"
+        decoding="async"
+      />
+      <figcaption>He'd probably tell you the answer is 42.</figcaption>
+    </figure>
+
+    <p>
+      <a href="/">← Back to home</a>
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .not-found {
+    text-align: center;
+    padding: 1rem 0 2rem;
+  }
+
+  .not-found h1 {
+    margin: 0 0 0.5rem;
+    font-size: 2.25rem;
+  }
+
+  .not-found-lede {
+    color: var(--text-muted);
+    margin: 0 auto 2rem;
+    max-width: 32rem;
+  }
+
+  .not-found-photo {
+    margin: 0 auto 2rem;
+    max-width: 440px;
+  }
+
+  .not-found-photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+  }
+
+  .not-found-photo figcaption {
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+</style>

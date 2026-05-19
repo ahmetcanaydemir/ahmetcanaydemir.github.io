@@ -1,0 +1,57 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Bio from '../components/Bio.astro';
+import { formatDate, readingTime } from '../utils/format';
+
+const posts = (await getCollection('blog'))
+  .filter((p) => !p.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Ahmet Can Aydemir',
+  url: 'https://ahmetcan.org/',
+  jobTitle: 'Software Development Engineer II',
+  worksFor: { '@type': 'Organization', name: 'Amazon' },
+  sameAs: [
+    'https://github.com/ahmetcanaydemir',
+    'https://linkedin.com/in/ahmetcanaydemir',
+    'https://twitter.com/ahmetcnaydemir',
+    'https://dev.to/ahmetcanaydemir',
+  ],
+};
+---
+
+<BaseLayout jsonLd={personJsonLd}>
+  <Bio size="large" showText={false} />
+
+  <section class="intro">
+    <h1>Hey, I'm Ahmet Can!</h1>
+    <p>
+      Software engineer at Amazon, in London. I write here about things I figure out at
+      work and want to remember.
+    </p>
+  </section>
+
+  <ul class="post-list">
+    {
+      posts.map((post) => (
+        <li class="post-list-item">
+          <h2>
+            <a href={`/${post.id}/`}>{post.data.title}</a>
+          </h2>
+          <span class="post-meta">
+            <time datetime={post.data.date.toISOString()}>
+              {formatDate(post.data.date)}
+            </time>
+            {' • '}
+            {readingTime(post.body ?? '')}
+          </span>
+          {post.data.description && <p class="post-spoiler">{post.data.description}</p>}
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>

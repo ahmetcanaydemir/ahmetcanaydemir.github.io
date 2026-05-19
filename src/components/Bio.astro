@@ -1,0 +1,34 @@
+---
+import { Image } from 'astro:assets';
+import profilePic from '../assets/profile-pic.jpg';
+
+interface Props {
+  size?: 'small' | 'large';
+  showText?: boolean;
+}
+
+const { size = 'small', showText = true } = Astro.props;
+
+const dimensions = size === 'large' ? 96 : 48;
+---
+
+<aside class={`bio bio-${size}`}>
+  <Image
+    src={profilePic}
+    alt="Ahmet Can Aydemir"
+    width={dimensions}
+    height={dimensions}
+    densities={[1, 2]}
+    quality={90}
+    loading="eager"
+    decoding="async"
+  />
+  {
+    showText && (
+      <p>
+        Personal blog by{' '}
+        <a href="https://twitter.com/ahmetcnaydemir">Ahmet Can Aydemir</a>.
+      </p>
+    )
+  }
+</aside>

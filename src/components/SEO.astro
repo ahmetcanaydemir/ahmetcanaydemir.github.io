@@ -1,0 +1,45 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  ogType?: 'website' | 'article';
+  publishedDate?: Date;
+}
+
+const SITE_TITLE = 'Ahmet Can Aydemir';
+const DEFAULT_DESCRIPTION =
+  'Personal website of Ahmet Can Aydemir — software engineer at Amazon, writing about programming.';
+
+const {
+  title,
+  description = DEFAULT_DESCRIPTION,
+  ogType = 'website',
+  publishedDate,
+} = Astro.props;
+
+const fullTitle = title ? `${title} — ${SITE_TITLE}` : SITE_TITLE;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+<meta name="author" content="Ahmet Can Aydemir" />
+<link rel="canonical" href={canonicalURL.toString()} />
+
+<meta property="og:type" content={ogType} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalURL.toString()} />
+<meta property="og:site_name" content={SITE_TITLE} />
+<meta property="og:locale" content="en_GB" />
+{
+  publishedDate && (
+    <meta property="article:published_time" content={publishedDate.toISOString()} />
+  )
+}
+{publishedDate && <meta property="article:author" content="Ahmet Can Aydemir" />}
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:creator" content="@ahmetcnaydemir" />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />

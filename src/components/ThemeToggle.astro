@@ -1,0 +1,44 @@
+---
+
+---
+
+<button
+  class="theme-toggle"
+  type="button"
+  aria-label="Toggle color theme"
+  data-theme-toggle
+>
+  <span aria-hidden="true" data-theme-icon-light>☀</span>
+  <span aria-hidden="true" data-theme-icon-dark style="display:none">☾</span>
+</button>
+
+<script is:inline>
+  (function () {
+    const root = document.documentElement;
+    const button = document.querySelector('[data-theme-toggle]');
+    const lightIcon = document.querySelector('[data-theme-icon-light]');
+    const darkIcon = document.querySelector('[data-theme-icon-dark]');
+
+    function syncIcon() {
+      const theme = root.getAttribute('data-theme');
+      if (theme === 'dark') {
+        lightIcon.style.display = 'none';
+        darkIcon.style.display = '';
+      } else {
+        lightIcon.style.display = '';
+        darkIcon.style.display = 'none';
+      }
+    }
+
+    syncIcon();
+
+    button?.addEventListener('click', () => {
+      const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try {
+        localStorage.setItem('theme', next);
+      } catch (e) {}
+      syncIcon();
+    });
+  })();
+</script>

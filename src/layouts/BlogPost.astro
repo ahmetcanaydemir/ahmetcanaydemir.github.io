@@ -1,0 +1,73 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import { formatDate, readingTime } from '../utils/format';
+
+interface Props {
+  title: string;
+  description?: string;
+  date: Date;
+  body: string;
+  prev?: { slug: string; title: string };
+  next?: { slug: string; title: string };
+}
+
+const { title, description, date, body, prev, next } = Astro.props;
+
+const blogPostJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: title,
+  description: description ?? '',
+  datePublished: date.toISOString(),
+  author: {
+    '@type': 'Person',
+    name: 'Ahmet Can Aydemir',
+    url: 'https://ahmetcan.org/',
+  },
+  url: new URL(Astro.url.pathname, Astro.site).toString(),
+  mainEntityOfPage: new URL(Astro.url.pathname, Astro.site).toString(),
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  ogType="article"
+  publishedDate={date}
+  jsonLd={blogPostJsonLd}
+>
+  <article class="blog-post">
+    <header>
+      <h1>{title}</h1>
+      <p class="post-meta">
+        <time datetime={date.toISOString()}>{formatDate(date)}</time>
+        {' • '}
+        {readingTime(body)}
+      </p>
+    </header>
+    <slot />
+  </article>
+
+  <nav class="post-nav-wrap" aria-label="Post navigation">
+    <ul class="post-nav">
+      <li class="post-nav-prev">
+        {
+          prev && (
+            <a href={`/${prev.slug}/`} rel="prev">
+              ← {prev.title}
+            </a>
+          )
+        }
+      </li>
+      <li class="post-nav-next">
+        {
+          next && (
+            <a href={`/${next.slug}/`} rel="next">
+              {next.title} →
+            </a>
+          )
+        }
+      </li>
+    </ul>
+  </nav>
+</BaseLayout>
