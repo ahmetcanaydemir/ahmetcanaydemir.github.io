@@ -1,0 +1,34 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: monthly
+      day: monday
+    open-pull-requests-limit: 5
+    groups:
+      astro:
+        patterns:
+          - 'astro'
+          - '@astrojs/*'
+      dev-tools:
+        patterns:
+          - 'prettier'
+          - 'prettier-plugin-*'
+      rehype:
+        patterns:
+          - 'rehype-*'
+    ignore:
+      # Hold major bumps for manual review.
+      - dependency-name: '*'
+        update-types: ['version-update:semver-major']
+    commit-message:
+      prefix: 'deps'
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+      day: monday
+    commit-message:
+      prefix: 'ci'
