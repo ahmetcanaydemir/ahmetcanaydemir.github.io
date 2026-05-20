@@ -1,27 +1,29 @@
 ---
-import { Image } from 'astro:assets';
-import { getCollection } from 'astro:content';
+import { Image, getImage } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import aboutCover from '../assets/about-cover.jpg';
+import profilePic from '../assets/profile-pic.jpg';
 
-const posts = await getCollection('blog');
-const sorted = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
-const dateCreated = sorted[sorted.length - 1]?.data.date.toISOString();
-const dateModified = sorted[0]?.data.date.toISOString();
+const profileImage = await getImage({
+  src: profilePic,
+  width: 400,
+  height: 400,
+  format: 'jpg',
+});
+const profileImageURL = new URL(profileImage.src, 'https://ahmetcan.org').toString();
 
 const profileJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ProfilePage',
-  dateCreated,
-  dateModified,
+  dateCreated: '2026-05-19',
+  dateModified: '2026-05-20',
   mainEntity: {
     '@type': 'Person',
     name: 'Ahmet Can Aydemir',
     givenName: 'Ahmet Can',
     familyName: 'Aydemir',
-    alternateName: 'ahmetcanaydemir',
     url: 'https://ahmetcan.org/',
-    image: 'https://ahmetcan.org/icon-512.png',
+    image: profileImageURL,
     jobTitle: 'Software Development Engineer II',
     description:
       'Software engineer at Amazon working on the Fire TV platform (Fire OS, Vega OS).',
