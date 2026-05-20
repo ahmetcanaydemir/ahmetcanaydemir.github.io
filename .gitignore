@@ -15,14 +15,21 @@ pnpm-debug.log*
 .env
 .env.production
 
-# macOS-specific files
-.DS_Store
+# editor / IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
 
-# editor
-.idea
-.vscode
+# macOS
+.DS_Store
 
 # misc
 .npm
 .eslintcache
 *.tgz
+*.tsbuildinfo
+
+# tooling reports
+.agentready/
