@@ -8,69 +8,30 @@ const posts = (await getCollection('blog'))
   .filter((p) => !p.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
-const personJsonLd = {
+const blogJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'Person',
+  '@type': 'Blog',
+  '@id': 'https://ahmetcan.org/#blog',
   name: 'Ahmet Can Aydemir',
-  givenName: 'Ahmet Can',
-  familyName: 'Aydemir',
   url: 'https://ahmetcan.org/',
-  image: 'https://ahmetcan.org/icon-512.png',
-  jobTitle: 'Software Development Engineer II',
-  description:
-    'Software engineer at Amazon working on the Fire TV platform (Fire OS, Vega OS).',
-  worksFor: {
-    '@type': 'Organization',
-    name: 'Amazon',
-    url: 'https://www.amazon.com/',
+  description: 'Personal blog by Ahmet Can Aydemir.',
+  inLanguage: 'en',
+  author: {
+    '@type': 'Person',
+    name: 'Ahmet Can Aydemir',
+    url: 'https://ahmetcan.org/about/',
   },
-  alumniOf: [
-    {
-      '@type': 'CollegeOrUniversity',
-      name: 'Konya Technical University',
-      url: 'https://www.ktun.edu.tr/',
-    },
-    {
-      '@type': 'CollegeOrUniversity',
-      name: 'Selçuk University',
-      url: 'https://www.selcuk.edu.tr/',
-    },
-  ],
-  gender: 'Male',
-  nationality: {
-    '@type': 'Country',
-    name: 'Türkiye',
-  },
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'London',
-    addressCountry: 'GB',
-  },
-  knowsLanguage: ['en', 'tr'],
-  knowsAbout: [
-    'Distributed Systems',
-    'Backend Engineering',
-    'Android Open Source Project',
-    'Fire OS',
-    'Vega OS',
-    'Go',
-    'Java',
-    'Kotlin',
-    'Python',
-    'TypeScript',
-    'React Native',
-    'Microservices',
-  ],
-  sameAs: [
-    'https://github.com/ahmetcanaydemir',
-    'https://linkedin.com/in/ahmetcanaydemir',
-    'https://twitter.com/ahmetcnaydemir',
-    'https://dev.to/ahmetcanaydemir',
-  ],
+  blogPost: posts.map((post) => ({
+    '@type': 'BlogPosting',
+    headline: post.data.title,
+    description: post.data.description ?? '',
+    datePublished: post.data.date.toISOString(),
+    url: `https://ahmetcan.org/${post.id}/`,
+  })),
 };
 ---
 
-<BaseLayout jsonLd={personJsonLd}>
+<BaseLayout jsonLd={blogJsonLd}>
   <Bio size="large" showText={false} />
 
   <section class="intro">

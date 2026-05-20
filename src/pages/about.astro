@@ -1,10 +1,87 @@
 ---
 import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import aboutCover from '../assets/about-cover.jpg';
+
+const posts = await getCollection('blog');
+const sorted = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const dateCreated = sorted[sorted.length - 1]?.data.date.toISOString();
+const dateModified = sorted[0]?.data.date.toISOString();
+
+const profileJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  dateCreated,
+  dateModified,
+  mainEntity: {
+    '@type': 'Person',
+    name: 'Ahmet Can Aydemir',
+    givenName: 'Ahmet Can',
+    familyName: 'Aydemir',
+    alternateName: 'ahmetcanaydemir',
+    url: 'https://ahmetcan.org/',
+    image: 'https://ahmetcan.org/icon-512.png',
+    jobTitle: 'Software Development Engineer II',
+    description:
+      'Software engineer at Amazon working on the Fire TV platform (Fire OS, Vega OS).',
+    worksFor: {
+      '@type': 'Organization',
+      name: 'Amazon',
+      url: 'https://www.amazon.com/',
+    },
+    alumniOf: [
+      {
+        '@type': 'CollegeOrUniversity',
+        name: 'Konya Technical University',
+        url: 'https://www.ktun.edu.tr/',
+      },
+      {
+        '@type': 'CollegeOrUniversity',
+        name: 'Selçuk University',
+        url: 'https://www.selcuk.edu.tr/',
+      },
+    ],
+    gender: 'Male',
+    nationality: {
+      '@type': 'Country',
+      name: 'Türkiye',
+    },
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'London',
+      addressCountry: 'GB',
+    },
+    knowsLanguage: ['en', 'tr'],
+    knowsAbout: [
+      'Distributed Systems',
+      'Backend Engineering',
+      'Android Open Source Project',
+      'Fire OS',
+      'Vega OS',
+      'Go',
+      'Java',
+      'Kotlin',
+      'Python',
+      'TypeScript',
+      'React Native',
+      'Microservices',
+    ],
+    sameAs: [
+      'https://github.com/ahmetcanaydemir',
+      'https://linkedin.com/in/ahmetcanaydemir',
+      'https://twitter.com/ahmetcnaydemir',
+      'https://dev.to/ahmetcanaydemir',
+    ],
+  },
+};
 ---
 
-<BaseLayout title="About" description="About Ahmet Can Aydemir.">
+<BaseLayout
+  title="About"
+  description="About Ahmet Can Aydemir."
+  jsonLd={profileJsonLd}
+>
   <article class="about-content">
     <h1>About this site</h1>
     <p class="about-lede">
