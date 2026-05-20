@@ -156,6 +156,23 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Underline body-content links so they're distinguishable without relying on color alone (WCAG 1.4.1). */
+.about-content p a,
+.about-content li a,
+.blog-post p a,
+.blog-post li a {
+  text-decoration: underline;
+  text-decoration-color: var(--border);
+  text-underline-offset: 2px;
+}
+
+.about-content p a:hover,
+.about-content li a:hover,
+.blog-post p a:hover,
+.blog-post li a:hover {
+  text-decoration-color: currentColor;
+}
+
 hr {
   border: 0;
   border-top: 1px solid var(--border);
@@ -321,20 +338,23 @@ h6 a:hover {
   margin-top: 4rem;
   padding-top: 1.5rem;
   border-top: 1px solid var(--border);
-  font-size: 0.85rem;
-  color: var(--text-muted);
+  font-size: 0.9rem;
+  color: var(--text);
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
-  opacity: 0.85;
 }
 
 .site-footer a {
-  color: var(--text-muted);
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--border);
+  text-underline-offset: 2px;
 }
 
 .site-footer a:hover {
   color: var(--link);
+  text-decoration-color: currentColor;
 }
 
 .footer-sep {
@@ -490,8 +510,7 @@ h6 a:hover {
   gap: 0.35rem;
   font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
   font-size: 0.8rem;
-  color: var(--text-muted);
-  opacity: 0.75;
+  color: var(--text);
   letter-spacing: 0.02em;
   vertical-align: middle;
   margin-left: 0.25rem;
@@ -502,13 +521,11 @@ h6 a:hover {
   cursor: pointer;
   transition:
     color 0.15s,
-    opacity 0.15s,
     background 0.15s;
 }
 
 .intro-pronounce:hover {
   color: var(--link);
-  opacity: 1;
   background: var(--inline-code-bg);
 }
 
