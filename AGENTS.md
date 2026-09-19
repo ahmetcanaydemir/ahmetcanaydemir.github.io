@@ -66,6 +66,7 @@ public/                 # static files served at root (CNAME, manifest, audio)
 ## Writing style
 
 Casual, direct, first-person. Avoid AI-generated patterns:
+
 - No em-dashes (`—`)
 - No throat-clearing openers ("Let's dive in", "In this post we will...")
 - No vague adverbs ("very", "really", "currently")

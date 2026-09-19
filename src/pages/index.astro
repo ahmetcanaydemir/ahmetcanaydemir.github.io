@@ -43,22 +43,20 @@ const blogJsonLd = {
   </section>
 
   <ul class="post-list">
-    {
-      posts.map((post) => (
-        <li class="post-list-item">
-          <h2>
-            <a href={`/${post.id}/`}>{post.data.title}</a>
-          </h2>
-          <span class="post-meta">
-            <time datetime={post.data.date.toISOString()}>
-              {formatDate(post.data.date)}
-            </time>
-            {' • '}
-            {readingTime(post.body ?? '')}
-          </span>
-          {post.data.description && <p class="post-spoiler">{post.data.description}</p>}
-        </li>
-      ))
-    }
+    {posts.map((post) => (
+      <li class="post-list-item">
+        <h2>
+          <a href={`/${post.id}/`}>{post.data.title}</a>
+        </h2>
+        <span class="post-meta">
+          <time datetime={post.data.date.toISOString()}>
+            {formatDate(post.data.date)}
+          </time>
+          {' • '}
+          {readingTime(post.body ?? '')}
+        </span>
+        {post.data.description && <p class="post-spoiler">{post.data.description}</p>}
+      </li>
+    ))}
   </ul>
 </BaseLayout>

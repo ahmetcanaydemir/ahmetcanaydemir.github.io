@@ -7,19 +7,25 @@ const isActive = (path: string) =>
 ---
 
 <header class="site-header">
-  <a href="/" class="site-brand" aria-label="Home">Ahmet Can Aydemir</a>
+  <a href="/" class="site-brand" aria-label="Home">
+    Ahmet Can Aydemir
+  </a>
   <div class="site-header-row">
     <nav class="site-nav" aria-label="Primary">
       <a
         href="/"
         aria-current={isActive('/') ? 'page' : undefined}
-        class={isActive('/') ? 'active' : ''}>Home</a
+        class={isActive('/') ? 'active' : ''}
       >
+        Home
+      </a>
       <a
         href="/about/"
         aria-current={isActive('/about') ? 'page' : undefined}
-        class={isActive('/about') ? 'active' : ''}>About</a
+        class={isActive('/about') ? 'active' : ''}
       >
+        About
+      </a>
     </nav>
     <ThemeToggle />
   </div>

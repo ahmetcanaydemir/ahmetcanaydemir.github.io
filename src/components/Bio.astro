@@ -23,12 +23,9 @@ const dimensions = size === 'large' ? 96 : 48;
     loading="eager"
     decoding="async"
   />
-  {
-    showText && (
-      <p>
-        Personal blog by{' '}
-        <a href="https://twitter.com/ahmetcnaydemir">Ahmet Can Aydemir</a>.
-      </p>
-    )
-  }
+  {showText && (
+    <p>
+      Personal blog by <a href="https://twitter.com/ahmetcnaydemir">Ahmet Can Aydemir</a>.
+    </p>
+  )}
 </aside>

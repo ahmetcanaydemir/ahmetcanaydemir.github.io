@@ -51,22 +51,18 @@ const blogPostJsonLd = {
   <nav class="post-nav-wrap" aria-label="Post navigation">
     <ul class="post-nav">
       <li class="post-nav-prev">
-        {
-          prev && (
-            <a href={`/${prev.slug}/`} rel="prev">
-              ← {prev.title}
-            </a>
-          )
-        }
+        {prev && (
+          <a href={`/${prev.slug}/`} rel="prev">
+            ← {prev.title}
+          </a>
+        )}
       </li>
       <li class="post-nav-next">
-        {
-          next && (
-            <a href={`/${next.slug}/`} rel="next">
-              {next.title} →
-            </a>
-          )
-        }
+        {next && (
+          <a href={`/${next.slug}/`} rel="next">
+            {next.title} →
+          </a>
+        )}
       </li>
     </ul>
   </nav>

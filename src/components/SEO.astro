@@ -32,11 +32,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <meta property="og:url" content={canonicalURL.toString()} />
 <meta property="og:site_name" content={SITE_TITLE} />
 <meta property="og:locale" content="en_GB" />
-{
-  publishedDate && (
-    <meta property="article:published_time" content={publishedDate.toISOString()} />
-  )
-}
+{publishedDate && (
+  <meta property="article:published_time" content={publishedDate.toISOString()} />
+)}
 {publishedDate && <meta property="article:author" content="Ahmet Can Aydemir" />}
 
 <meta name="twitter:card" content="summary" />

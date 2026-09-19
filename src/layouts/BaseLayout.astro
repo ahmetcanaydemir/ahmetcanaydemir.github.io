@@ -38,7 +38,9 @@ const { title, description, ogType = 'website', publishedDate, jsonLd } = Astro.
       ogType={ogType}
       publishedDate={publishedDate}
     />
-    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+    {jsonLd && (
+      <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
+    )}
     <script is:inline>
       // Read stored theme synchronously to prevent flash on load.
       (function () {
@@ -54,7 +56,9 @@ const { title, description, ogType = 'website', publishedDate, jsonLd } = Astro.
     </script>
   </head>
   <body>
-    <a href="#main" class="skip-link">Skip to content</a>
+    <a href="#main" class="skip-link">
+      Skip to content
+    </a>
     <main id="main">
       <Header />
       <slot />
