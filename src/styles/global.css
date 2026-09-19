@@ -250,7 +250,7 @@ th {
   background: var(--bg-secondary);
 }
 
-/* heading anchor links from rehype-autolink-headings */
+/* heading anchor links from the heading-links plugin in astro.config.mjs */
 h1 a,
 h2 a,
 h3 a,
