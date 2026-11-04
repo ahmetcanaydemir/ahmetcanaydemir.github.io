@@ -379,6 +379,11 @@ h6 a:hover {
     background 0.15s ease-out;
 }
 
+:root[data-theme='dark'] [data-theme-icon-light],
+:root:not([data-theme='dark']) [data-theme-icon-dark] {
+  display: none;
+}
+
 .theme-toggle:hover {
   border-color: var(--link);
 }
