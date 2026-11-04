@@ -4,7 +4,7 @@ This is the source for [ahmetcan.org](https://ahmetcan.org), a personal blog by 
 
 ## Stack
 
-- **Framework**: Astro 6
+- **Framework**: Astro 7
 - **Markdown**: `@astrojs/mdx`, Shiki syntax highlighting (built-in), `rehype-slug` + `rehype-autolink-headings`
 - **Hosting**: GitHub Pages, custom domain `ahmetcan.org`
 - **Node**: 22 (see `.nvmrc`)
