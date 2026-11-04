@@ -37,3 +37,14 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v5
+      # Cloudflare keeps site HTML at the edge; drop it so the new build shows right away.
+      - name: Purge Cloudflare cache
+        env:
+          CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CF_ZONE: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+        run: |
+          curl --fail-with-body -sS -X POST \
+            "https://api.cloudflare.com/client/v4/zones/$CF_ZONE/purge_cache" \
+            -H "Authorization: Bearer $CF_TOKEN" \
+            -H "Content-Type: application/json" \
+            --data '{"hosts":["ahmetcan.org"]}'
