@@ -12,9 +12,17 @@ interface Props {
   ogType?: 'website' | 'article';
   publishedDate?: Date;
   jsonLd?: Record<string, unknown>;
+  noindex?: boolean;
 }
 
-const { title, description, ogType = 'website', publishedDate, jsonLd } = Astro.props;
+const {
+  title,
+  description,
+  ogType = 'website',
+  publishedDate,
+  jsonLd,
+  noindex,
+} = Astro.props;
 const favicon = await getImage({
   src: faviconIcon,
   width: 32,
@@ -50,6 +58,7 @@ const touchIcon = await getImage({
       description={description}
       ogType={ogType}
       publishedDate={publishedDate}
+      noindex={noindex}
     />
     {jsonLd && (
       <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
