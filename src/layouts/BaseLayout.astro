@@ -3,6 +3,7 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SEO from '../components/SEO.astro';
+import { getImage } from 'astro:assets';
 import faviconIcon from '../assets/icon.png';
 
 interface Props {
@@ -14,6 +15,18 @@ interface Props {
 }
 
 const { title, description, ogType = 'website', publishedDate, jsonLd } = Astro.props;
+const favicon = await getImage({
+  src: faviconIcon,
+  width: 32,
+  height: 32,
+  format: 'png',
+});
+const touchIcon = await getImage({
+  src: faviconIcon,
+  width: 180,
+  height: 180,
+  format: 'png',
+});
 ---
 
 <!doctype html>
@@ -23,8 +36,8 @@ const { title, description, ogType = 'website', publishedDate, jsonLd } = Astro.
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#282c35" media="(prefers-color-scheme: dark)" />
-    <link rel="icon" type="image/png" href={faviconIcon.src} />
-    <link rel="apple-touch-icon" href={faviconIcon.src} />
+    <link rel="icon" type="image/png" sizes="32x32" href={favicon.src} />
+    <link rel="apple-touch-icon" href={touchIcon.src} />
     <link rel="manifest" href="/manifest.webmanifest" />
     <link
       rel="alternate"

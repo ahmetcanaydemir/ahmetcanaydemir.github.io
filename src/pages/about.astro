@@ -91,10 +91,12 @@ const profileJsonLd = {
       <Image
         src={aboutCover}
         alt="Ahmet Can Aydemir"
-        widths={[360, 480, 720]}
+        width={720}
+        widths={[360, 480, 720, 1080]}
         sizes="(min-width: 760px) 440px, 100vw"
         quality={82}
         loading="eager"
+        fetchpriority="high"
         decoding="async"
       />
     </figure>

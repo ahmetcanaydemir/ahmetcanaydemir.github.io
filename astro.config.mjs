@@ -44,6 +44,8 @@ export default defineConfig({
   },
   build: {
     format: 'directory',
+    // global.css is ~7 KB, over the 4 KB auto-inline limit; inline it to drop the render-blocking request.
+    inlineStylesheets: 'always',
   },
   trailingSlash: 'always',
 });
