@@ -1,5 +1,7 @@
 ---
+import { getImage } from 'astro:assets';
 import BaseLayout from './BaseLayout.astro';
+import profilePic from '../assets/profile-pic.jpg';
 import { formatDate, readingTime } from '../utils/format';
 
 interface Props {
@@ -13,6 +15,15 @@ interface Props {
 
 const { title, description, date, body, prev, next } = Astro.props;
 
+// Google wants an image on every BlogPosting; posts have no covers, so use the profile photo.
+const postImage = await getImage({
+  src: profilePic,
+  width: 400,
+  height: 400,
+  format: 'jpg',
+});
+const postImageURL = new URL(postImage.src, Astro.site).toString();
+
 const blogPostJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
@@ -25,6 +36,7 @@ const blogPostJsonLd = {
     url: 'https://ahmetcan.org/',
   },
   url: new URL(Astro.url.pathname, Astro.site).toString(),
+  image: postImageURL,
   mainEntityOfPage: new URL(Astro.url.pathname, Astro.site).toString(),
 };
 ---
